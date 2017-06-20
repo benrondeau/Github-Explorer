@@ -7,12 +7,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class GetUserComponent implements OnInit {
 
-  constructor() { }
+  results = {};
+  resultsAvailable = false;
+
+  constructor() {
+   }
 
   ngOnInit() {
   }
 
-  searchForUser(input) {
+  searchForUser(event, input) {
+
+    event.preventDefault();
+
     fetch(`https://api.github.com/users/${input}`, {
       headers: new Headers({
         Accept: 'application/vnd.github.v3+json'
@@ -20,7 +27,9 @@ export class GetUserComponent implements OnInit {
     })
     .then((response) => {
       response.json().then((json) => {
-        console.log(json);
+        this.results = json;
+        console.log(this.results);
+        this.resultsAvailable = true;
       });
     })
     .catch((response) => {

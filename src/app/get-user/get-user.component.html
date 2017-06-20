@@ -1,4 +1,18 @@
-<div>
-  <input type="text" #serachUsernameInput placeholder="Enter username...">
-  <button (click)="searchForUser(serachUsernameInput.value)">Search</button>
+<div class="row">
+  <div class="col-lg-12">
+    <input type="text" #serachUsernameInput placeholder="Enter username...">
+    <input type="submit" value="Search" (click)="searchForUser($event, serachUsernameInput.value)">
+  </div>
+</div>
+
+<div class="row" *ngIf="resultsAvailable">
+  <div class="col-lg-12">
+    <h3>Results</h3>
+    <ul>
+      <li><img src="{{results.avatar_url}}" alt="Profile Image" id="profileImg"></li>
+      <li>{{results.name}}</li>
+      <li>{{results.location}}</li>
+      <li> <a href="{{results.html_url}}">Profile</a></li>
+    </ul>
+  </div>
 </div>
