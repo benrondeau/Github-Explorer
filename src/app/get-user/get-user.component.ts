@@ -12,4 +12,20 @@ export class GetUserComponent implements OnInit {
   ngOnInit() {
   }
 
+  searchForUser(input) {
+    fetch(`https://api.github.com/users/${input}`, {
+      headers: new Headers({
+        Accept: 'application/vnd.github.v3+json'
+      })
+    })
+    .then((response) => {
+      response.json().then((json) => {
+        console.log(json);
+      });
+    })
+    .catch((response) => {
+      console.error(response);
+    });
+  }
+
 }
