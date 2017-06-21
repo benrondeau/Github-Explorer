@@ -6,6 +6,7 @@ import { GetUserComponent } from './get-user/get-user.component';
 import { MenubarComponent } from './menubar/menubar.component';
 import { AppRoutingModule } from './app.router';
 import { HomeComponent } from './home/home.component';
+import { FetchService } from './fetch.service';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,7 @@ import { HomeComponent } from './home/home.component';
     BrowserModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [FetchService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
