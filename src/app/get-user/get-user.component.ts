@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FetchService } from '../services/fetch/fetch.service';
 
 @Component({
   selector: 'app-get-user',
@@ -10,27 +11,21 @@ export class GetUserComponent implements OnInit {
   results: object = {};
   resultsAvailable = false;
 
+  constructor(private fetchService: FetchService) { }
+
   ngOnInit() {
   }
 
-  searchForUser(event, input: string) {
-
-    event.preventDefault();
-
-    fetch(`https://api.github.com/users/${input}`, {
-      headers: new Headers({
-        Accept: 'application/vnd.github.v3+json'
-      })
-    })
-    .then((response) => {
-      response.json().then((json) => {
-        this.results = json;
-        this.resultsAvailable = true;
-      });
-    })
-    .catch((response) => {
-      console.error(response);
-    });
+  getUserInfo(event, username: string) {
+    event.preventDefault(); // Prevent form submission
+    this.fetchService.getUser(username)
+      .subscribe(
+        results => {
+          console.log(results);
+          this.results = results;
+          this.resultsAvailable = true;
+        },
+        error =>  console.error(error));
   }
 
 }
