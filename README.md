@@ -2,6 +2,8 @@
 
 Simple app using Github API v3 and Angular 2
 
+Live URL: [https://benrondeau.github.io/Github-Explorer/dist/](https://benrondeau.github.io/Github-Explorer/dist/)
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.1.2.
 
 ### Development server
