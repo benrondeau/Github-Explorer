@@ -7,16 +7,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class GetUserComponent implements OnInit {
 
-  results = {};
+  results: object = {};
   resultsAvailable = false;
-
-  constructor() {
-   }
 
   ngOnInit() {
   }
 
-  searchForUser(event, input) {
+  searchForUser(event, input: string) {
 
     event.preventDefault();
 
