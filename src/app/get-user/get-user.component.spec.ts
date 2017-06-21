@@ -29,9 +29,16 @@ describe('GetUserComponent', () => {
   });
 
   it('should return results for Octocat', () => {
-    const compiled = fixture.debugElement.nativeElement;
-    expect(true).toEqual(true);
+    // add string to input field
+    // hit submit
+    // receive response from Github
+    expect(true).toEqual(true); // TODO update when test is written
   });
+
+  it('should render JSON results to DOM', () => {
+    expect(true).toEqual(true); // TODO update when test is written
+  });
+
 
 
 });
