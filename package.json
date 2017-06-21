@@ -5,7 +5,8 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build --target=production --base-href /Github-Explorer/dist/",
+    "build": "ng build",
+    "github-build": "ng build --target=production --base-href /Github-Explorer/dist/",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"
