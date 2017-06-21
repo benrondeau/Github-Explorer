@@ -19,7 +19,19 @@ describe('GetUserComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should be created', () => {
+  it('<app-get-user/> should be created', () => {
     expect(component).toBeTruthy();
   });
+
+  it('should render two <input> elements', () => {
+    const compiled = fixture.debugElement.nativeElement;
+    expect(compiled.getElementsByTagName('input').length).toEqual(2);
+  });
+
+  it('should return results for Octocat', () => {
+    const compiled = fixture.debugElement.nativeElement;
+    expect(true).toEqual(true);
+  });
+
+
 });

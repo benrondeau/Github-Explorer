@@ -28,7 +28,6 @@ export class GetUserComponent implements OnInit {
     .then((response) => {
       response.json().then((json) => {
         this.results = json;
-        console.log(this.results);
         this.resultsAvailable = true;
       });
     })

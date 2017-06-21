@@ -19,7 +19,7 @@ describe('MenubarComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should be created', () => {
+  it('<app-menu-bar/> should be created', () => {
     expect(component).toBeTruthy();
   });
 });
