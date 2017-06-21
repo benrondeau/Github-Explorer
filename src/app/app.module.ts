@@ -4,15 +4,19 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { GetUserComponent } from './get-user/get-user.component';
 import { MenubarComponent } from './menubar/menubar.component';
+import { AppRoutingModule } from './app.router';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     GetUserComponent,
-    MenubarComponent
+    MenubarComponent,
+    HomeComponent,
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
