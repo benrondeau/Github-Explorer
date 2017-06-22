@@ -4,16 +4,18 @@ import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/catch';
 import 'rxjs/add/operator/map';
 
+import { GithubUser } from './githubUser';
+
 @Injectable()
 export class FetchService {
 
   constructor(private http: Http) { }
 
-  getUser(username: string): Observable<Object> {
+  getUser(username: string): Observable<GithubUser> {
     // Set custom headers
-    const headers: any = new Headers();
+    const headers = new Headers();
     headers.append('Accept', 'application/vnd.github.v3+json');
-    const options: any = new RequestOptions({ headers: headers });
+    const options = new RequestOptions({ headers: headers });
 
     return this.http.get(`https://api.github.com/users/${username}`, options)
       .map(this.extractData)

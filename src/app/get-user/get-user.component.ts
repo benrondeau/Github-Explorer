@@ -3,8 +3,8 @@ import { FetchService } from '../services/fetch/fetch.service';
 
 @Component({
   selector: 'app-get-user',
-  templateUrl: './get-user.component.html',
-  styleUrls: ['./get-user.component.css']
+  templateUrl: 'get-user.component.html',
+  styles: ['#profileImg { max-height: 100px; }']
 })
 export class GetUserComponent implements OnInit {
 
@@ -21,7 +21,6 @@ export class GetUserComponent implements OnInit {
     this.fetchService.getUser(username)
       .subscribe(
         results => {
-          console.log(results);
           this.results = results;
           this.resultsAvailable = true;
         },
